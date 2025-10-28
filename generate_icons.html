@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+</head>
+<body>
+    <canvas id="canvas16" width="16" height="16"></canvas>
+    <canvas id="canvas48" width="48" height="48"></canvas>
+    <canvas id="canvas128" width="128" height="128"></canvas>
+    
+    <script>
+        function createIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Red background
+            ctx.fillStyle = '#FF0000';
+            ctx.fillRect(0, 0, size, size);
+            
+            // White play symbol
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            const margin = size / 4;
+            ctx.moveTo(margin, margin);
+            ctx.lineTo(margin, size - margin);
+            ctx.lineTo(size - margin, size / 2);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Download
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `icon${size}.png`;
+                a.click();
+            });
+        }
+        
+        // Generate icons after page loads
+        setTimeout(() => {
+            createIcon('canvas16', 16);
+            setTimeout(() => createIcon('canvas48', 48), 100);
+            setTimeout(() => createIcon('canvas128', 128), 200);
+        }, 500);
+    </script>
+</body>
+</html>

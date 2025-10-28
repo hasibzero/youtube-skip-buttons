@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Fast Forward/Rewind 5s",
+  "version": "1.0",
+  "description": "Adds 5-second fast-forward and rewind buttons beside YouTube video timer",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

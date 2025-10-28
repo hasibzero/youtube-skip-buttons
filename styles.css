@@ -1,0 +1,44 @@
+/* Custom YouTube Controls Styles */
+
+.custom-yt-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.custom-yt-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  opacity: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.custom-yt-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.custom-yt-btn:active {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(0.98);
+}
+
+.custom-yt-btn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
