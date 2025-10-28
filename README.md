@@ -42,6 +42,3 @@ A Chrome extension that adds custom 5-second fast-forward and rewind buttons bes
 - Buttons automatically appear when you navigate to a video
 - Compatible with YouTube's native controls
 
-## Creating Icons
-
-You'll need to create three icon files (16x16, 48x48, and 128x128 pixels) or use placeholder icons. You can create simple icons using any image editor or online icon generators.
