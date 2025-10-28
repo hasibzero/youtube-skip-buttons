@@ -30,7 +30,7 @@ A Chrome extension that adds custom 5-second fast-forward and rewind buttons bes
 - `manifest.json` - Extension configuration
 - `content.js` - Main functionality script
 - `styles.css` - Button styling
-- `icon16.png`, `icon48.png`, `icon128.png` - Extension icons (need to be created)
+- `icon16.png`, `icon48.png`, `icon128.png` - Extension icons 
 
 ## Notes
 
