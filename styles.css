@@ -3,37 +3,40 @@
 .custom-yt-controls {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  margin-left: 8px;
+  gap: 0;
+  margin-left: 4px;
   vertical-align: middle;
+  height: 100%;
 }
 
 .custom-yt-btn {
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
-  width: 36px;
-  height: 36px;
-  padding: 8px;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.2s;
-  opacity: 0.9;
+  transition: opacity 0.1s cubic-bezier(0.4, 0.0, 1, 1);
+  opacity: 1;
+  color: #fff;
+  fill: #fff;
+  outline: none;
 }
 
 .custom-yt-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .custom-yt-btn:active {
-  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0.5;
 }
 
 .custom-yt-btn svg {
   width: 100%;
   height: 100%;
   display: block;
+  pointer-events: none;
 }
