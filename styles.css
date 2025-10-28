@@ -10,7 +10,7 @@
 }
 
 .custom-yt-btn {
-  background: none;
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   cursor: pointer;
   width: 48px;
@@ -19,19 +19,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.1s cubic-bezier(0.4, 0.0, 1, 1);
+  transition: background-color 0.15s ease;
   opacity: 1;
   color: #fff;
   fill: #fff;
   outline: none;
+  border-radius: 50%;
+  margin: 0 2px;
 }
 
 .custom-yt-btn:hover {
-  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .custom-yt-btn:active {
-  opacity: 0.5;
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .custom-yt-btn svg {
