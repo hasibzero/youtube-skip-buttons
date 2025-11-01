@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test YouTube Controls</title>
+</head>
+<body>
+
+  <h1>YouTube Controls Placement Test</h1>
+  <p>This test verifies that the custom fast-forward and rewind controls are placed correctly before the time display.</p>
+
+  <div id="test-container">
+    <div class="ytp-chrome-bottom">
+      <div class="ytp-chrome-controls">
+        <div class="ytp-left-controls">
+          <div class="ytp-time-display">
+            <span class="ytp-time-current">1:23</span>
+            <span class="ytp-time-separator"> / </span>
+            <span class="ytp-time-duration">5:43</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <video style="display: none;"></video>
+
+  <!-- Load the script to be tested -->
+  <script src="../content.js"></script>
+
+  <h2>Test Result</h2>
+  <div id="result"></div>
+
+  <script>
+    function runTest() {
+      const timeDisplay = document.querySelector('.ytp-time-display');
+      const controls = document.querySelector('.custom-yt-controls');
+      const resultDiv = document.getElementById('result');
+
+      if (!timeDisplay || !controls) {
+        resultDiv.textContent = 'FAIL: Required elements not found on the page.';
+        resultDiv.style.color = 'red';
+        return;
+      }
+
+      // The bug was that `controls` was the next sibling. The fix is that it's the previous sibling.
+      if (timeDisplay.previousElementSibling === controls) {
+        resultDiv.textContent = 'PASS: Controls are correctly positioned before the time display.';
+        resultDiv.style.color = 'green';
+      } else {
+        resultDiv.textContent = 'FAIL: Controls are incorrectly positioned.';
+        resultDiv.style.color = 'red';
+      }
+    }
+
+    // Run the test after the content script has had a chance to execute.
+    setTimeout(runTest, 100);
+  </script>
+
+</body>
+</html>

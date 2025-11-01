@@ -49,7 +49,7 @@ function addCustomControls() {
   controlsContainer.appendChild(fastForwardButton);
 
   // Insert controls beside the time display
-  timeDisplay.parentNode.insertBefore(controlsContainer, timeDisplay.nextSibling);
+  timeDisplay.parentNode.insertBefore(controlsContainer, timeDisplay);
 
   console.log('Custom YouTube controls added!');
 }
